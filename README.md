@@ -17,10 +17,14 @@ The bot:
 Features
 
 - Binance Futures Testnet API integration
-- Live market data fetching
-- EMA 10 / EMA 20 strategy
-- Automatic BUY and SELL orders
+- MARKET Orders
+- LIMIT Orders
+- BUY and SELL support
+- CLI input using argparse
+- Input validation
 - Logging support
+- Error handling
+- EMA 10 / EMA 20 strategy example
 - Environment variable security (.env)
 
 ---
@@ -70,6 +74,24 @@ Create a .env file:
 
 BINANCE_API_KEY=your_api_key
 BINANCE_SECRET_KEY=your_secret_key
+
+CLI Usage
+
+Market Buy Order
+
+python cli.py --symbol BTCUSDT --side BUY --type MARKET --quantity 0.001
+
+Market Sell Order
+
+python cli.py --symbol BTCUSDT --side SELL --type MARKET --quantity 0.001
+
+Limit Buy Order
+
+python cli.py --symbol BTCUSDT --side BUY --type LIMIT --quantity 0.001 --price 50000
+
+Limit Sell Order
+
+python cli.py --symbol BTCUSDT --side SELL --type LIMIT --quantity 0.001 --price 120000
 
 ---
 
